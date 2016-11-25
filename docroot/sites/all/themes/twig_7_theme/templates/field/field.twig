@@ -1,0 +1,8 @@
+{# Fields are themed in a function by default. #}
+{#{{ element|dump('dpm') }}#}
+{% if items is not empty %}
+    {% if not label_hidden %}
+        <div class="label-{{ element['#label_display'] }}">{{ label }}:&nbsp;</div>
+    {% endif %}
+    {{ items }}
+{% endif %}

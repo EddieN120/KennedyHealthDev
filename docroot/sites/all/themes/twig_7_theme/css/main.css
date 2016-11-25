@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 100%;
+}
+
+body {
+  padding: 0;
+  width: 1020px;
+  margin: auto;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+ul#secondary-menu-links, ul#main-menu-links {
+  background-color: lightgray;
+  padding: 0.275rem 0;
+  list-style: none;
+}
+
+ul#secondary-menu-links li, ul#main-menu-links li {
+  float: left
+}
+
+ul#secondary-menu-links li a, ul#main-menu-links li a {
+  font-weight: bold;
+  border-right: 0 none;
+  margin-bottom: 4px;
+  padding: 2px 10px 3px;
+}
+
+ul#secondary-menu-links li a:not(.button), ul#main-menu-links li a:not(.button) {
+  color: #666666;
+}
+
+ul#main-menu-links li {
+  font-size: 120%;
+}
+
+article {
+  margin: 10px 0;
+}
+
+#main-content,
+#sidebar-first,
+#sidebar-second {
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+#main-content {
+  width: 100%;
+}
+body.sidebar-first #main-content {
+  width: 80%;
+  left: 20%; /* LTR */
+}
+body.sidebar-second #main-content {
+  width: 80%;
+}
+body.two-sidebars #main-content {
+  width: 60%;
+  left: 20%;
+}
+
+#sidebar-first {
+  width: 20%;
+  left: -80%; /* LTR */
+}
+
+body.two-sidebars #sidebar-first {
+  left: -60%; /* LTR */
+}
+
+#sidebar-second {
+  float: right; /* LTR */
+  width: 20%;
+}

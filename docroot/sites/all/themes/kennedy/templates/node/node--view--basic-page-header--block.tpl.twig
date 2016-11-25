@@ -1,0 +1,22 @@
+{% set array_count = count(content.field_header_content['#items']) %}
+{%
+    set has_image_class = array_count > 1 ? ' hasHeroImage'
+%}
+
+<section {% block attribs %}class="{{ classes }}{{ has_image_class }}" {{ attributes }} {% endblock %}>
+    {% block unpublished %}
+        {% if status == 0 %}
+            <p class="unpublished">{{ 'Unpublished'|t }}</p>
+        {% endif %}
+    {% endblock %}
+    {% block content %}
+        {# /**{{ content|without('comments', 'links') }}*/ #}
+        {{ content }}
+        {% if content.links %}
+            <div class="links">
+                {{ content.links }}
+            </div>
+        {% endif %}
+        {{ content.comments }}
+    {% endblock %}
+</section>

@@ -1,0 +1,38 @@
+{% set image_align = content.field_align_right['#items'][0].value %}
+{% set field_resource_link = content.field_resource_link %}
+{% set field_image = content.field_image %}
+
+{%
+set first_col_classes = image_align == 1 ? 'medium-push-9'
+%}
+
+{%
+set sec_col_classes = image_align == 1 ? 'medium-pull-4'
+%}
+
+{%
+set sec_col_med = field_image ? 'medium-8' : 'medium-12'
+%}
+
+{%
+set has_image = field_image ? 'has-image' : 'no-image'
+%}
+
+<div class="{{ classes }} {{ has_image }}">
+    <div class="row">
+        {% if field_image %}
+        <div class="small-12 medium-3 columns {{first_col_classes}}">
+            {{ field_image }}
+        </div>
+        {% endif %}
+        <div class="small-12 {{sec_col_med}} columns {{sec_col_classes}}">
+            <h2>{{ content.field_title }}</h2>
+            {{ content.field_body }}
+            {% if field_resource_link %}
+                <div class="resource-links">
+                    {{ field_resource_link }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

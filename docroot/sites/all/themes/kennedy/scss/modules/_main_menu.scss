@@ -1,0 +1,120 @@
+#block-system-main-menu {
+    li.expanded, li.collapsed, li.leaf {
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+    }
+    .-menu--1 {
+        &>li {
+            position: relative;
+            &:hover {
+                &>a {
+                    background: $green;
+                    border-radius: 10px 10px 0 0 ;
+                }
+                .-menu--2 {visibility: visible;}
+            }
+            &>a {
+                text-transform: uppercase;
+                color: #fff;
+                font-size: .9rem;
+                letter-spacing: .1rem;
+            }
+        }
+    }
+    .-menu--2 {
+        position: absolute;
+        width: 600px;
+        background: #fff;
+        margin: 0;
+        list-style-type: none;
+        padding: 1rem .5rem;
+        border-radius: 0 0 10px 10px;
+        font-size: .85rem;
+        visibility: hidden;
+        a {
+            color: $ship;
+            &.active {
+                color: $green;
+            }
+        }
+        ul, li {
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0;
+            padding: 0;
+        }
+        &>li.expanded {
+            max-width:24%;
+            float: left;
+            padding: 0 .5rem;
+            border-right: 1px solid #e2e2e2;
+            &:last-child {
+                border-right: 0 none;
+                max-width:28%;
+            }
+            &>a {font-weight: bold;}
+        }
+        .menu-views {
+            max-width: 50%;
+            float: left;
+            padding: 0 1rem 0 .5rem;
+            margin-right: 1rem;
+            border-right: 1px solid #e2e2e2;
+        }
+    }
+    .-menu--2 .-menu--3 {
+        margin-top: .25rem;
+        &>li {
+            margin-bottom: .25rem;
+        }
+        a.active {
+            color: $green;
+        }
+    }
+
+    .services {
+        .-menu--1 {
+            visibility: hidden;
+        }
+        &:hover {
+            .-menu--1 {
+                visibility: visible;
+            }   
+        }
+        .views-exposed-widget, input {margin-right: 0;}
+        .views-exposed-widget {
+            padding: 0;
+        }
+
+        .menu-views {
+            max-width: 45%;
+        }
+        .search-services {
+            max-width: 45%;
+            float: left;
+            >a {display: none;}
+            #edit-combine-wrapper input {
+                border-right: 0 none;
+                box-shadow: initial;
+            }
+            .views-submit-button input {
+                margin-top: 25px;
+                display: block;
+                box-sizing: border-box;
+                height: 2.4375rem;
+                padding: 0.5rem;
+                border: 1px solid #cacaca;
+                border-left: 0 none;
+                color: #0a0a0a;
+                background-color: #fefefe;
+            }
+        }
+        .service-glossary {
+            max-width: 100%;
+            border-right: 0;
+        }
+    }
+}
+

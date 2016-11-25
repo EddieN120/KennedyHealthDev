@@ -1,0 +1,24 @@
+.resource-links {
+    text-align: center;
+    margin-top: 2rem;
+    .field-item {
+        display: inline;
+        margin: 0 .5rem;
+    }
+    a {
+        display: inline-block;
+        color: #fff;
+        background: $sienna;
+        border-radius: .75rem;
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-weight: bold;
+        letter-spacing: .12rem;
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        margin: 0 1rem;
+        &[href^="http"] {
+            background: $green;
+        }
+    }
+}

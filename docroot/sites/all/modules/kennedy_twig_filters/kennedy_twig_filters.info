@@ -1,0 +1,3 @@
+name = Kennedy Twig Filters
+description = custom Drupal 7 Twig filters for Kennedy
+core = 7.x

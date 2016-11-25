@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path
+ *   Which path of the site we're using to display help
+ * @param arg
+ *   Array that holds the current path as returned from arg() function
+ */
+
+
+function kennedy_twig_filters_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#kennedy_twig_filters":
+      return '' . t("Creates required filters for Twig templates for Drupal 7") . '';
+      break;
+  }
+}
+
+
+function kennedy_twig_filters_twig_filter() {
+    $filters = [];
+    $filters['clean_class'] = new Twig_SimpleFilter('clean_class', 'kennedy_twig_filters_clean_class_filter');
+    $filters['generate_class'] = new Twig_SimpleFilter('generate_class', 'kennedy_twig_filters_generate_class_filter');
+    return $filters;
+}
+
+function kennedy_twig_filters_clean_class_filter($string) {
+    $spacesRemoved = preg_replace("/[^[:alnum:][:space:]]/u", '', $string);
+    $lowercased = strtolower(str_replace($spacesRemoved, ' ', '-'));
+
+    return $lowercased;
+}
+
+function kennedy_twig_filters_generate_class_filter($array) {
+    return implode(' ', $array);
+}
+
+
+function kennedy_twig_filters_twig_function(){
+    $functions = [];
+    $functions['dpm'] = new Twig_SimpleFunction('dpm','kennedy_twig_filters_dpm');
+    $functions['file_create_url'] = new Twig_SimpleFunction('file_create_url','kennedy_twig_filters_file_create_url');
+    $functions['count'] = new Twig_SimpleFunction('count','kennedy_twig_filters_count');
+    $functions['base_url'] = new Twig_SimpleFunction('base_url','kennedy_twig_filters_base_url');
+    $functions['isset'] = new Twig_SimpleFunction('isset','kennedy_twig_filters_isset');
+    return $functions;
+}
+
+function kennedy_twig_filters_dpm($param_1){
+    dpm($param_1);
+}
+
+function kennedy_twig_filters_file_create_url($param_1){
+    return file_create_url($param_1);
+}
+
+function kennedy_twig_filters_count($param_1){
+    return count($param_1);
+}
+
+
+function kennedy_twig_filters_base_url(){
+  $protocol = (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] != "off")) ? "https" : "http";
+  return $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}
+
+function kennedy_twig_filters_isset($param_1){
+  return isset($param_1);
+}

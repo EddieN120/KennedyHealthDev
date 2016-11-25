@@ -1,0 +1,11 @@
+{#{{ block|dump }}#}
+<section id="{{ block_html_id }}" class="{{ classes }}"{{ attributes }}>
+{{ title_prefix }}
+{% if block.title %}
+    <h2 class="block-title"{{ title_attributes }}>{{ block.title }}</h2>
+{% elseif block.subject %}
+    <h2 class="block-title"{{ title_attributes }}>{{ block.subject }}</h2>
+{% endif %}
+{{ title_suffix }}
+{{ content }}
+</section>

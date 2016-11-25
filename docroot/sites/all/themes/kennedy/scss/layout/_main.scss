@@ -1,0 +1,26 @@
+// Non-modular or client styles for the .l-content region.
+
+.row.expanded>.row {
+    max-width: 1250px;
+}
+
+#main {
+    background: #fff;
+    @include angle(before);
+    padding: 0;
+    .paragraphs-items-field-page-content {
+        .row {
+            //margin-left: 0.9375rem;
+            //margin-right: 0.9375rem;
+        }
+        .entity {
+          background: #fff;
+        }
+        .entity:nth-child(even) {
+            background: #f2f2f2;
+        }
+        .entity:last-child {
+          @include angle(after, true);
+        }
+    }
+}

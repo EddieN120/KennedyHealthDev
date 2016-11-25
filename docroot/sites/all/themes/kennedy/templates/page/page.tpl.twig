@@ -1,0 +1,132 @@
+<!-- header area -->
+
+    <header class="row expanded" role="banner" aria-label="{{ 'Site header'|t }}">
+        <div class="row">
+          {% if logo %}
+            <div class="large-2 columns">
+              <div class="page-header__logo">
+                <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" id="logo">
+                    <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+                </a>
+              </div>
+            </div>
+            <div class="left large-4 columns">
+              {% if site_name %}
+                    {% if title %}
+                        <div id="site-name" {% if hide_site_name %} class="element-invisible"{% endif %}>
+                            <strong>
+                                <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home"><span>{{ site_name }}</span></a>
+                            </strong>
+                        </div>
+                        {# Use h1 when the content title is empty #}
+                    {% else %}
+                        <h1 id="site-name"{% if hide_site_name %} class="element-invisible" {% endif %}>
+                            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home"><span>{{ site_name }}</span></a>
+                        </h1>
+                    {% endif %}
+                {% endif %}
+            </div>
+          {% endif %}
+          {% if page.top_menu %}
+            <div class="right large-6 columns">
+              {{ page.top_menu }}
+            </div>
+          {% endif %}
+        </div>
+      </header>
+    <div class="top-bar">
+            <div class="row">
+            <div class="top-bar-left">
+                {{ page.main_menu }}
+            </div>
+            <div class="top-bar-right">
+                {{ page.secondary_menu }}
+            </div>
+        </div>
+    </div>
+
+<div id="main-page-wrapper">
+    {% if messages %}
+        <div class="l-messages row expanded">
+            <div class="large-12 columns">
+                {{ messages }}
+            </div>
+        </div>
+    {% endif %}
+    {% block hero %}
+        {% if page.hero %}
+            <div class="hero row expanded">
+                <div class="large-12 columns">
+                    {{ page.hero }}
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}
+    {% block main %}
+    <div class="row expanded">
+        <main id="main" role="main">
+            <div class="content">
+                <a id="main-content" tabindex="-1"></a>
+                {{ page.help }}
+                {% block main_content %}
+                    <section id="main-content" class="main-content">
+                        {{ title_prefix }}
+                        {% block title %}
+                            {% if title %}
+                                <h1 class="page-title" id="page-title">
+                                    {{- title -}}
+                                </h1>
+                            {% endif %}
+                        {% endblock %}
+                        {{ title_suffix }}
+                        {% if tabs['#primary'] or tabs['#secondary'] %}
+                            <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+                                {{ tabs }}
+                            </nav>
+                        {% endif %}
+                        {% if action_links %}
+                            <ul class="action-links">{{ action_links }}</ul>
+                        {% endif %}
+                        {{ page.content }}
+                    </section>
+                {% endblock %}
+                {% if page.sidebar_first %}
+                    {% block sidebar_first %}
+                        <aside id="sidebar-first" class="sidebar" role="complementary">
+                            {{ page.sidebar_first }}
+                        </aside>
+                    {% endblock %}
+                {% endif %}
+                {% if page.sidebar_second %}
+                    {% block sidebar_second %}
+                        <aside id="sidebar-second" class="sidebar" role="complementary">
+                            {{ page.sidebar_second }}
+                        </aside>
+                    {% endblock %}
+                {% endif %}
+            </div>
+        </main>
+    </div>
+    {% endblock %}
+    {% block footer_callout %}
+			{% if page.footer_callout %}
+					{{ page.footer_callout }}
+			{% endif %}
+    {% endblock %}
+    {% block footer %}
+			<footer id="page-footer" class="page-footer">
+			  <div class="row">
+					<div class="columns small-12 medium-3">
+		        {% if page.footer %}
+		            {{ page.footer }}
+		        {% endif %}
+					</div>
+					<div class="columns small-12 medium-9">
+						{% if page.footer_right %}
+		            {{ page.footer_right }}
+		        {% endif %}
+					</div>
+				</div>
+			</footer>
+    {% endblock %}
+</div>

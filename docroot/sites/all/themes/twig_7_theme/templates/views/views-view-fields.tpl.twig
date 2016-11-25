@@ -1,0 +1,7 @@
+{% for field in fields %}
+    {{- field.separator }}
+    {{ field.wrapper_prefix }}
+        {{ field.label_html }}
+        {{ field.content }}
+    {{ field.wrapper_suffix }}
+{% endfor %}

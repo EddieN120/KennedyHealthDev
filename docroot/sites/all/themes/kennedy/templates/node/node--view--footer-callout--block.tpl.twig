@@ -1,0 +1,44 @@
+
+{% set large_image = file_create_url(content.field_large_image['#items'][0]['uri']) %}
+{% set small_image = file_create_url(content.field_small_image['#items'][0]['uri']) %}
+{% set background_color = content.field_background_color['#items'][0]['rgb'] %}
+{% set image_angle = content.field_background_angle['#items'][0].value %}
+{% set base_url = base_url() %}
+
+<section id="footer-callout-section" {% block attribs %}class="{{ classes }}" {{ attributes }} {% endblock %}>
+{% if large_image != base_url and small_image != base_url %}
+    <style>
+      #footer-callout-section {
+        background-image: url({{small_image}});
+        background-color: transparent !important;
+      }
+      @media only screen and (min-width: 40em) {
+        #footer-callout-section {
+          background-image: url({{large_image}});
+        }
+      }
+    </style>
+{% endif %}
+{% if large_image == base_url and small_image == base_url and image_angle == 1 %}
+  <style>
+    #block-views-footer-callout-block {
+      padding: 30px 0;
+    }
+  </style>
+{% endif %}
+{% if isset(background_color) %}
+  <style>
+    #block-views-footer-callout-block {background-color: {{background_color}};}
+  </style>
+{% endif %}
+    {% block unpublished %}
+        {% if status == 0 %}
+            <p class="unpublished">{{ 'Unpublished'|t }}</p>
+        {% endif %}
+    {% endblock %}
+    {% block content %}
+
+        {{ content.field_callout_content }}
+
+    {% endblock %}
+</section>

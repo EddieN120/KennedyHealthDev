@@ -1,0 +1,21 @@
+<section {% block attribs %}class="{{ classes }}" {{ attributes }} {% endblock %}>
+    {{ title_prefix }}
+    {% block title %}
+        {% include "twig_7_theme::node/inc/node-title.tpl.twig" %}
+    {% endblock %}
+    {{ title_suffix }}
+    {% block unpublished %}
+        {% if status == 0 %}
+            <p class="unpublished">{{ 'Unpublished'|t }}</p>
+        {% endif %}
+    {% endblock %}
+    {% block content %}
+        {{ content|without('comments', 'links') }}
+        {% if content.links %}
+            <div class="links">
+                {{ content.links }}
+            </div>
+        {% endif %}
+        {{ content.comments }}
+    {% endblock %}
+</section>

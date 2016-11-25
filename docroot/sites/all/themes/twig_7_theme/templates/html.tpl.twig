@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="{{ language.dir }}"{{ rdf_namespaces }}>
+    <head>
+        {% block head %}
+            {{ head }}
+            {% block title %}
+                <title>{{ head_title }}</title>
+            {% endblock %}
+            {% block styles %}
+                {{ styles }}
+            {% endblock %}
+            {% block scripts %}
+                {{ scripts }}
+            {% endblock %}
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+        {% endblock %}
+    </head>
+    <body class="{{ classes }}"{{ attributes }}>
+        {% block body %}
+            <div id="skip">
+                <a href="#main-content" class="element-invisible element-focusable skip-link">
+                    {{ 'Skip to main content'|t }}
+                </a>
+            </div>
+            {{ page_top }}
+            {{ page }}
+            {{ page_bottom }}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{% if title %} <h3>{{ title }}</h3> {% endif %}
+{% block rows %}
+    {% for row in rows %}
+        {% block row %}
+            {{ row }}
+        {% endblock %}
+    {% endfor %}
+{% endblock %}

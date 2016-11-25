@@ -1,0 +1,16 @@
+{{ wrapper_prefix }}
+{% block title %}
+    {% if title %}
+        <h3>{{ title }}</h3>
+    {% endif %}
+{% endblock %}
+{% block list %}
+    {{ list_type_prefix }}
+        {% for id, row in rows %}
+            {% block row %}
+                <li class="{{ classes_array.id }}">{{ row }}</li>
+            {% endblock %}
+        {% endfor %}
+    {{ list_type_suffix }}
+{% endblock %}
+{{ wrapper_suffix }}

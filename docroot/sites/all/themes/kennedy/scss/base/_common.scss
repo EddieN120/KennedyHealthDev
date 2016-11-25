@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+// Common abstract classes to extend or parametrics are stored here.
+
+// Example parametrics.
+// ------------------------------------------------------
+// %font-FONTNAME   {}
+// %font-sans-serif { font-family: sans-serif; }
+// %font-serif      { font-family: serif; }
+
+%font-oxygen {font-family: 'Oxygen', sans-serif;};
+
+$blue: #2D368E;
+$green: #00b1b0;
+$sienna: #ec7063;
+$slate: #5D6D7E;
+$ship: #414042;
+$concrete: #f2f2f2;
+$iron: #dfe2e5;
+$mojo: #c54133;

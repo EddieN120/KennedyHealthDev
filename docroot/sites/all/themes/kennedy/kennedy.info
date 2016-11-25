@@ -1,0 +1,57 @@
+name =  KennedyHealth
+description = Child theme for Twig7
+core = 7.x
+base theme = twig_7_theme
+engine = twig
+
+; ==========================================>>>  REGIONS
+regions[header] = Header
+regions[top_menu] = Top Menu
+regions[main_menu] = Main Menu
+regions[secondary_menu] = Secondary Menu
+regions[help] = Help
+regions[hero] = Hero
+regions[sidebar_first] = Left Side Bar
+regions[content] = Main content
+regions[sidebar_second] = Right Side Bar
+regions[footer_callout] = Footer Callout
+regions[footer] = Footer
+regions[footer_right] = Footer Right
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+
+#regions[meta_header] = Meta Header
+#regions[top_menu] = Top Menu
+#regions[main_menu] = Main Menu
+#regions[regions[secondary_menu] = Secondary Menu
+#regions[header] = Header
+#regions[hero] = Hero
+#regions[help] = Help
+#regions[page_top] = Page top
+#regions[page_bottom] = Page bottom
+#regions[highlighted] = Highlighted
+#regions[content] = Content
+#regions[sidebar_first] = Left Sidebar
+#regions[sidebar_second] = Right Sidebar
+#regions[footer_first] = Footer first column
+#regions[footer_middle] = Footer middle column
+#regions[footer_last] = Footer last column
+#regions[left_off_canvas] = Left off canvas
+#regions[right_off_canvas] = Right off canvas
+
+
+; ==========================================>>>  STYLESHEETS
+stylesheets[all][] = css/main.css
+
+;==========================================>>>  OPTIONS
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; ==========================================>>>  JAVASCRIPT
+scripts[] = js/vendor/foundation.js
+scripts[] = js/kennedy.js

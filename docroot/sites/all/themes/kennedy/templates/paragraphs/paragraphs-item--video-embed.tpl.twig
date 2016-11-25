@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a single paragraph item.
+ *
+ * Available variables:
+ * - $content: An array of content items. Use render($content) to print them
+ *   all, or print a subset such as render($content['field_example']). Use
+ *   hide($content['field_example']) to temporarily suppress the printing of a
+ *   given element.
+ * - $classes: String of classes that can be used to style contextually through
+ *   CSS. It can be manipulated through the variable $classes_array from
+ *   preprocess functions. By default the following classes are available, where
+ *   the parts enclosed by {} are replaced by the appropriate values:
+ *   - entity
+ *   - entity-paragraphs-item
+ *   - paragraphs-item-{bundle}
+ *
+ * Other variables:
+ * - $classes_array: Array of html class attribute values. It is flattened into
+ *   a string within the variable $classes.
+ *
+ */
+#}
+
+{% set image_align = content.field_align_right['#items'][0].value %}
+
+{%
+set first_col_classes = image_align == 1 ? 'medium-push-6'
+%}
+
+{%
+set sec_col_classes = image_align == 1 ? 'medium-pull-6'
+%}
+
+<div class="{{ classes }}">
+    <div class="row">
+
+        <div class="small-12 medium-6 columns {{first_col_classes}}">
+            {{ content.field_youtube_url }}
+            {{ content.field_video_footer }}
+        </div>
+
+        <div class="small-12 medium-6 columns {{sec_col_classes}}">
+            <h2>{{ content.field_title }}</h2>
+            {{ content.field_body }}
+            <div class="resource-links">
+                {{ content.field_resource_link }}
+            </div>
+        </div>
+    </div>
+</div>

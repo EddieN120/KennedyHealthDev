@@ -1,0 +1,13 @@
+.paragraphs-item-image-and-text {
+    > .row {
+        max-width: map-get($breakpoints, 'xlarge');
+        padding: 3rem 0;
+        .medium-12 {
+            h2 {text-align: center;}
+        }
+        h2 {
+            color: $blue;
+            margin-bottom: 1rem;
+        }
+    }
+}

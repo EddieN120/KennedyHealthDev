@@ -1,0 +1,29 @@
+
+{% set large_image = file_create_url(content.field_large_image['#items'][0]['uri']) %}
+{% set small_image = file_create_url(content.field_small_image['#items'][0]['uri']) %}
+
+{% if large_image != '/' and small_image != '/' %}
+    <style>
+        header {
+            background: rgba(45, 54, 142, .75);
+        }
+        #main-page-wrapper {
+        position:relative;
+        top:-120px;
+        }
+        .top-bar {
+            background: transparent;
+        }
+        #main {
+            position: relative;
+        }
+        .hero.expanded.row {
+            margin: 0 auto;
+            position: relative;
+            border-bottom: 0 none;
+        }
+    </style>
+    <div class="{{ classes }}">
+        <img data-interchange="[{{ small_image }}, small], [{{ large_image }}, medium]">
+    </div>
+{% endif %}
