@@ -4474,3 +4474,45 @@ header {
     color: #fff; }
   #footer-callout-section .no-image {
     text-align: center; }
+
+.paragraphs-item-faq-section {
+  background-color: transparent !important;
+  max-width: 800px;
+  margin: 0 auto; }
+  .paragraphs-item-faq-section .accordion-item:first-child > :first-child {
+    border-radius: 8px 8px 0 0; }
+  .paragraphs-item-faq-section :last-child:not(.is-active) > .accordion-title,
+  .paragraphs-item-faq-section :last-child:not(.is-active) > .accordion-title:hover {
+    border-bottom: 0 none;
+    border-radius: 0 0 8px 8px; }
+  .paragraphs-item-faq-section ul {
+    background-color: #eef0f2;
+    border-radius: 8px;
+    padding: 0; }
+    .paragraphs-item-faq-section ul li {
+      border-bottom: 1px solid #c7c9cc;
+      border-top: 1px solid #e1e2e3; }
+      .paragraphs-item-faq-section ul li.is-active a.accordion-title {
+        background-color: #212e84;
+        color: #fff; }
+      .paragraphs-item-faq-section ul li:first-child {
+        border-top: 0 none; }
+        .paragraphs-item-faq-section ul li:first-child a {
+          border-radius: 8px 8px 0 0;
+          padding-top: 1.5rem !important; }
+      .paragraphs-item-faq-section ul li:last-child {
+        border-bottom: 0 none; }
+        .paragraphs-item-faq-section ul li:last-child a {
+          padding-bottom: 1.5rem !important;
+          border-bottom: 0 none; }
+      .paragraphs-item-faq-section ul li a.accordion-title {
+        border: 0;
+        color: #5d6d7e;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        text-decoration: none;
+        font-size: 1rem; }
+      .paragraphs-item-faq-section ul li .accordion-content {
+        font-size: 1rem;
+        background-color: #fff;
+        color: #5d6d7e; }
