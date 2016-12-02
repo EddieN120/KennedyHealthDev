@@ -21,6 +21,9 @@
         a.accordion-title {
           background-color: #212e84;
           color: #fff;
+          &::before {
+            background: url(../images/faq-arrow-up.png) no-repeat;
+          }
         }
       }
       &:first-child {
@@ -44,6 +47,13 @@
         padding-bottom: .75rem;
         text-decoration: none;
         font-size: 1rem;
+        &::before {
+          content: '';
+          background: url(../images/faq-arrow-down.png) no-repeat;
+          height: 10px;
+          width: 15px;
+          top: -5px;
+        }
       }
       .accordion-content {
         font-size: 1rem;

@@ -4495,6 +4495,8 @@ header {
       .paragraphs-item-faq-section ul li.is-active a.accordion-title {
         background-color: #212e84;
         color: #fff; }
+        .paragraphs-item-faq-section ul li.is-active a.accordion-title::before {
+          background: url(../images/faq-arrow-up.png) no-repeat; }
       .paragraphs-item-faq-section ul li:first-child {
         border-top: 0 none; }
         .paragraphs-item-faq-section ul li:first-child a {
@@ -4512,6 +4514,12 @@ header {
         padding-bottom: .75rem;
         text-decoration: none;
         font-size: 1rem; }
+        .paragraphs-item-faq-section ul li a.accordion-title::before {
+          content: '';
+          background: url(../images/faq-arrow-down.png) no-repeat;
+          height: 10px;
+          width: 15px;
+          top: -5px; }
       .paragraphs-item-faq-section ul li .accordion-content {
         font-size: 1rem;
         background-color: #fff;
