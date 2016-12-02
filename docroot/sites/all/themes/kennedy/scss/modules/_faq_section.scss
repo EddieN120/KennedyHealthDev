@@ -10,11 +10,11 @@
     border-bottom: 0 none;
     border-radius: 0 0 8px 8px;
   }
-  ul {
+  ul.accordion {
     background-color: #eef0f2;
     border-radius: 8px;
     padding: 0;
-    li {
+    li.accordion-item {
       border-bottom: 1px solid #c7c9cc;
       border-top: 1px solid #e1e2e3;
       &.is-active {

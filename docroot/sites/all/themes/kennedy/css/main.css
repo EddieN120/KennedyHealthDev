@@ -4485,42 +4485,42 @@ header {
   .paragraphs-item-faq-section :last-child:not(.is-active) > .accordion-title:hover {
     border-bottom: 0 none;
     border-radius: 0 0 8px 8px; }
-  .paragraphs-item-faq-section ul {
+  .paragraphs-item-faq-section ul.accordion {
     background-color: #eef0f2;
     border-radius: 8px;
     padding: 0; }
-    .paragraphs-item-faq-section ul li {
+    .paragraphs-item-faq-section ul.accordion li.accordion-item {
       border-bottom: 1px solid #c7c9cc;
       border-top: 1px solid #e1e2e3; }
-      .paragraphs-item-faq-section ul li.is-active a.accordion-title {
+      .paragraphs-item-faq-section ul.accordion li.accordion-item.is-active a.accordion-title {
         background-color: #212e84;
         color: #fff; }
-        .paragraphs-item-faq-section ul li.is-active a.accordion-title::before {
+        .paragraphs-item-faq-section ul.accordion li.accordion-item.is-active a.accordion-title::before {
           background: url(../images/faq-arrow-up.png) no-repeat; }
-      .paragraphs-item-faq-section ul li:first-child {
+      .paragraphs-item-faq-section ul.accordion li.accordion-item:first-child {
         border-top: 0 none; }
-        .paragraphs-item-faq-section ul li:first-child a {
+        .paragraphs-item-faq-section ul.accordion li.accordion-item:first-child a {
           border-radius: 8px 8px 0 0;
           padding-top: 1.5rem !important; }
-      .paragraphs-item-faq-section ul li:last-child {
+      .paragraphs-item-faq-section ul.accordion li.accordion-item:last-child {
         border-bottom: 0 none; }
-        .paragraphs-item-faq-section ul li:last-child a {
+        .paragraphs-item-faq-section ul.accordion li.accordion-item:last-child a {
           padding-bottom: 1.5rem !important;
           border-bottom: 0 none; }
-      .paragraphs-item-faq-section ul li a.accordion-title {
+      .paragraphs-item-faq-section ul.accordion li.accordion-item a.accordion-title {
         border: 0;
         color: #5d6d7e;
         padding-top: .75rem;
         padding-bottom: .75rem;
         text-decoration: none;
         font-size: 1rem; }
-        .paragraphs-item-faq-section ul li a.accordion-title::before {
+        .paragraphs-item-faq-section ul.accordion li.accordion-item a.accordion-title::before {
           content: '';
           background: url(../images/faq-arrow-down.png) no-repeat;
           height: 10px;
           width: 15px;
           margin-top: -5px; }
-      .paragraphs-item-faq-section ul li .accordion-content {
+      .paragraphs-item-faq-section ul.accordion li.accordion-item .accordion-content {
         font-size: 1rem;
         background-color: #fff;
         color: #5d6d7e; }
