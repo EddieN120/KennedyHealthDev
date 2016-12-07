@@ -1,4 +1,4 @@
-<?php
+{#
 
 /**
  * @file
@@ -63,16 +63,18 @@
  *
  * @ingroup themeable
  */
-?>
-<li class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-  <h3 class="title"<?php print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"> {{ title }} </a>
+
+#}
+
+<li class="{{ classes }}" {{ attributes }} >
+  {{ title_prefix }}
+  <h3 class="title" {{ title_attributes }} >
+    <a href="{{ url }}"> {{ title }} </a>
   </h3>
-  <?php print render($title_suffix); ?>
+  {{ title_suffix }}
   <div class="search-snippet-info">
     {% if snippet %}
-      <p class="search-snippet" {{ content_attributes }} >> {{ snippet }} </p>
+      <p class="search-snippet" {{ content_attributes }} > {{ snippet }} </p>
     {% endif %}
     {% if info %}
       <p class="search-info"> {{ info }} </p>

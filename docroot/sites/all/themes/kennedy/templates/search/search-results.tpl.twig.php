@@ -1,4 +1,4 @@
-<?php
+{#
 
 /**
  * @file
@@ -22,14 +22,16 @@
  *
  * @ingroup themeable
  */
-?>
+
+#}
+
 {% if search_results %}
   <h2> {{ 'Search results'|t }} </h2>
-  <ol class="search-results <?php print $module; ?>-results">
+  <ol class="search-results {{ module }}-results">
     {{ $search_results }} 
   </ol>
   {{ print $pager }} 
 {% else %}
   <h2> {{ 'Your search yielded no results'|t }} </h2>
-  <?php print search_help('search#noresults', drupal_help_arg()); ?>
+  {# <?php print search_help('search#noresults', drupal_help_arg()); ?> #}
 {% endif %}
