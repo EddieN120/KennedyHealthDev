@@ -4399,14 +4399,17 @@ header {
   float: left; }
 
 .bariatric-menu {
+  position: relative;
+  z-index: 2;
   text-align: center; }
   .bariatric-menu > ul.menu {
     display: inline-table;
-    text-align: center; }
+    text-align: center;
+    font-size: 0; }
   .bariatric-menu > ul.menu > li {
     border-right: 0 none;
-    display: inline;
-    float: left;
+    display: inline-block;
+    text-align: center;
     margin: 0; }
     .bariatric-menu > ul.menu > li:last-child > a {
       border-right: 1px solid #d9d9d9; }
@@ -4416,12 +4419,12 @@ header {
       text-transform: uppercase;
       background: #f2f2f2;
       border: 1px solid #d9d9d9;
-      line-height: 3;
+      line-height: 1em;
       font-weight: bold;
-      font-size: .8rem;
+      font-size: .65rem;
       letter-spacing: 1px;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem; }
+      padding-left: .5rem;
+      padding-right: .5rem; }
     .bariatric-menu > ul.menu > li.is-active > a {
       color: #fff;
       background: #00b1b0; }
@@ -4433,7 +4436,7 @@ header {
         .bariatric-menu > ul.menu > li > ul > li a {
           color: #757575;
           font-weight: bold;
-          font-size: .8rem;
+          font-size: .65rem;
           letter-spacing: 1px;
           text-decoration: none;
           text-transform: uppercase; }

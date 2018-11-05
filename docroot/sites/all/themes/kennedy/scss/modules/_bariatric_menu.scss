@@ -1,10 +1,12 @@
 .bariatric-menu {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    > ul.menu { display: inline-table; text-align:center; }
-    > ul.menu > li { 
+    > ul.menu { display: inline-table; text-align:center; font-size: 0;}
+    > ul.menu > li {
         border-right: 0 none;
-        display: inline;
-        float: left;
+        display: inline-block;
+        text-align: center;
         margin: 0;
         &:last-child > a {
             border-right: 1px solid #d9d9d9;
@@ -15,12 +17,12 @@
             text-transform: uppercase;
             background: #f2f2f2;
             border: 1px solid #d9d9d9;
-            line-height: 3;
+            line-height: 1em;
             font-weight: bold;
-            font-size: .8rem;
+            font-size: .65rem;
             letter-spacing: 1px;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem; 
+            padding-left: .5rem;
+            padding-right: .5rem;
         }
         &.is-active > a {
             color: #fff;
@@ -34,7 +36,7 @@
                 a {
                     color: #757575;
                     font-weight: bold;
-                    font-size: .8rem;
+                    font-size: .65rem;
                     letter-spacing: 1px;
                     text-decoration: none;
                     text-transform: uppercase;
